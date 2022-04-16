@@ -7,7 +7,9 @@ function BaseModal( props: any ) {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-            <Modal.Body>
+            <Modal.Body
+                style={{ minWidth: "500px" }}
+            >
                 { props.contents }
             </Modal.Body>
         </Modal>

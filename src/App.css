@@ -100,3 +100,11 @@ body {
 .flex-direction-column {
     flex-direction: column;
 }
+
+/* .col-sm-1 {
+    width: 8.33333333% !important;
+}
+
+.col-sm-2 {
+    width: 16.66666667% !important;
+} */

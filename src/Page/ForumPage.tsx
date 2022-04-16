@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import ForumCard from "../Component/ForumCard";
 import { useDispatch } from "react-redux";

@@ -1,10 +1,5 @@
 
-import React from "react";
-
-interface ModalAction {
-    type: string,
-    value?: object
-}
+import { BaseAction } from "../Interface/BaseAction";
 
 const nullModals = {
     loginModal: false,
@@ -12,7 +7,7 @@ const nullModals = {
     addForumModal: false
 };
 
-function modal_reducer( state = nullModals, action: ModalAction ) {
+function modal_reducer( state = nullModals, action: BaseAction ) {
     var _state = {...state};
     switch( action.type ) {
         case 'login/show':

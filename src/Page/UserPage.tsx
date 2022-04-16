@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { NowPageAction } from "../Store/nowpage";
 
 const UserPage = () => {
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         const action: NowPageAction = {
             type: "nowpage/set",

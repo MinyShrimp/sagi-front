@@ -1,4 +1,3 @@
-import React from "react";
 import { Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -6,7 +5,6 @@ import "./App.css";
 import Header from "./Component/Header";
 import PageHandler from "./Page/PageHandler";
 import Footer from "./Component/Footer";
-import Login from "./Component/Login";
 import AddRecord from "./Component/AddRecord";
 import AddForum  from "./Component/AddForum";
 import { RootState } from "./Store/index";
@@ -36,7 +34,6 @@ function App() {
             > + </Button>
 
             {/* Modals */}
-            <Login />
             <AddRecord />
             <AddForum />
         </div>

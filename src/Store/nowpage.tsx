@@ -5,6 +5,9 @@ const pages = {
     1: "record",
     2: "forum",
     3: "contact",
+    4: "login",
+    5: "signup",
+    6: "addrecord"
 } as const;
 export type PAGES = typeof pages[ keyof typeof pages ];
 

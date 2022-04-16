@@ -4,6 +4,7 @@ import UserPage    from "./UserPage";
 import RecordPage  from "./RecordPage";
 import ForumPage   from "./ForumPage";
 import ContactPage from "./ContactPage";
+import LoginPage   from "./LoginPage";
 
 const PageHandler = () => {
     useEffect(() => {
@@ -18,6 +19,7 @@ const PageHandler = () => {
                     <Route path="/record"  element={<RecordPage  />} />
                     <Route path="/forum"   element={<ForumPage   />} />
                     <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/login"   element={<LoginPage   />} />
                 </Routes>
             </div>
         </div>

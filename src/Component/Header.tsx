@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import LoginImg from "../assets/login.svg";
 
 const Header = () => {
@@ -10,13 +11,9 @@ const Header = () => {
                 <div className="nav-item">
                     <span className="navbar-brand">사기 ~Sagi~</span>
                 </div>
-                <div className="nav-item"
-                    onClick={() => {
-                        dispatch({ type: "login/show" });
-                    }}
-                >
+                <Link className="nav-item" to="/login">
                     <img src={LoginImg} style={{ height: "42px", cursor: "pointer" }} />
-                </div>
+                </Link>
             </div>
         </div>
     );
