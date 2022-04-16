@@ -1,10 +1,11 @@
 
 export interface Info {
-    name:   string,
-    score:  number,
-    star:   number,
-    seat:   number,
-    isPlus: boolean
+    name:    string,
+    score:   number,
+    star:    number,
+    seat:    number,
+    isPlus:  boolean,
+    perpect: string,
 }
 
 export interface InfosAction {
@@ -14,5 +15,5 @@ export interface InfosAction {
 }
 
 export const DummyInfo: Info = {
-    name: "", score: 0, star: 0, seat: 0, isPlus: false
+    name: "", score: 0, star: 0, seat: 0, isPlus: false, perpect: ""
 }

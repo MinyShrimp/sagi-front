@@ -1,13 +1,7 @@
-import { Info, InfosAction } from "../Interface/Info";
+import { InfosAction } from "../Interface/Info";
+import { DummyInfos }  from "../Interface/Record";
 
-const nullInfos: Array<Info> = [
-    { name: "", score: 0, star: 0, seat: 0, isPlus: true },
-    { name: "", score: 0, star: 0, seat: 1, isPlus: true },
-    { name: "", score: 0, star: 0, seat: 2, isPlus: true },
-    { name: "", score: 0, star: 0, seat: 3, isPlus: true },
-];
-
-function infos_reducer( state = nullInfos, action: InfosAction ) {
+function infos_reducer( state = DummyInfos, action: InfosAction ) {
     var _state = [...state];
     switch( action.type ) {
         case 'infos/setIsPlus':

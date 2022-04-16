@@ -1,5 +1,5 @@
 
-import { Info, DummyInfo } from "./Info";
+import { Info } from "./Info";
 
 export interface Record {
     index:   number,
@@ -15,10 +15,10 @@ export interface RecordAction {
 }
 
 export const DummyInfos: Array<Info> = [
-    { name: "", score: 0, star: 0, seat: 0, isPlus: true },
-    { name: "", score: 0, star: 0, seat: 1, isPlus: true },
-    { name: "", score: 0, star: 0, seat: 2, isPlus: true },
-    { name: "", score: 0, star: 0, seat: 3, isPlus: true },
+    { name: "", score: 0, star: 0, seat: 0, isPlus: true, perpect: "" },
+    { name: "", score: 0, star: 0, seat: 1, isPlus: true, perpect: "" },
+    { name: "", score: 0, star: 0, seat: 2, isPlus: true, perpect: "" },
+    { name: "", score: 0, star: 0, seat: 3, isPlus: true, perpect: "" },
 ];
 
 export const getCleanInfos = () => {

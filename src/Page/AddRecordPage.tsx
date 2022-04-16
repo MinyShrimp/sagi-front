@@ -40,10 +40,26 @@ const AddRecordPage = () => {
         dispatch({ type: "perpect/clean" });
         dispatch({ type: "record/clean" });
     }, []);
+
+    const clean_perpect = () => {
+        record.infos.forEach((value) => { value.perpect = ""; })
+    }
+
+    const mix_record = () => {
+        clean_perpect();
+
+        var infos = record.infos
+        perpects.forEach((value, index) => {
+            const idx = infos.findIndex((i) => i.name === value.name);
+            if( idx !== -1 ) {
+                infos[idx].perpect += ( value.index + '|' );
+            }
+        })
+    }
     
     const submit = async () => {
-        console.log(record)
-        console.log(perpects)
+        mix_record();
+        console.log(record.infos)
     }
 
     const getNamesByServer = async () => {
@@ -125,6 +141,8 @@ const AddRecordPage = () => {
                                 <input 
                                     className="form-control" 
                                     placeholder="별" 
+                                    type="number"
+                                    min={0}
                                     value = { 
                                         value.star === 0 ? '' : value.star
                                     }
@@ -186,6 +204,7 @@ const AddRecordPage = () => {
                         <input
                             className="form-control"
                             type="number"
+                            min={0}
                             placeholder="공탁금"
                             value = {
                                 record.deposit === 0 ? '' : record.deposit
