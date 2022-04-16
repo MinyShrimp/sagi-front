@@ -7,6 +7,7 @@ import ContactPage   from "./ContactPage";
 import LoginPage     from "./LoginPage";
 import AddRecordPage from "./AddRecordPage";
 import AddForumPage  from "./AddForumPage";
+import SignupPage    from "./SignupPage";
 
 const PageHandler = () => {
     useEffect(() => {
@@ -22,6 +23,7 @@ const PageHandler = () => {
                     <Route path="/forum"     element={<ForumPage     />} />
                     <Route path="/contact"   element={<ContactPage   />} />
                     <Route path="/login"     element={<LoginPage     />} />
+                    <Route path="/signup"    element={<SignupPage    />} />
                     <Route path="/addrecord" element={<AddRecordPage />} />
                     <Route path="/addforum"  element={<AddForumPage  />} />
                 </Routes>

@@ -1,19 +1,24 @@
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import LoginImg from "../assets/login.svg";
+import { Link }  from "react-router-dom";
+import LoginImg  from "../assets/login.svg";
+import LogoutImg from "../assets/logout.svg";
+import SinupImg  from "../assets/signup.svg";
 
 const Header = () => {
-    const dispatch = useDispatch();
-
     return (
         <div className="navbar navbar-light bg-light header">
             <div className="container">
                 <div className="nav-item">
                     <span className="navbar-brand">사기 ~Sagi~</span>
                 </div>
-                <Link className="nav-item" to="/login">
-                    <img src={LoginImg} style={{ height: "42px", cursor: "pointer" }} />
-                </Link>
+                <div className="nav-item">
+                    <Link to="/signup" style={{ marginRight: "15px" }}>
+                        <img src={SinupImg} style={{ height: "42px", cursor: "pointer" }} />
+                    </Link>
+
+                    <Link to="/login">
+                        <img src={LoginImg} style={{ height: "42px", cursor: "pointer" }} />
+                    </Link>
+                </div>
             </div>
         </div>
     );

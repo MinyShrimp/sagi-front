@@ -65,7 +65,7 @@ const AddRecordPage = () => {
             <Row style={{ alignContent: "center", justifyContent: "center", maxWidth: "800px" }}>
                 {record.infos.map((value, index) => {
                     return (
-                        <Row className="mt-3" key={index} style={{ alignItems: "center" }}>
+                        <Row className="mt-3" key={index} style={{ alignItems: "center", justifyContent: "center" }}>
                             <Col className="mb-3" sm={1} style={{ textAlign: "center" }}>
                                 <div><b> {seat[index]} </b></div>
                             </Col>
@@ -140,7 +140,7 @@ const AddRecordPage = () => {
                 {
                     perpects.map((value, index) => {
                         return (
-                            <Row key={index} style={{ alignItems: "center" }}>
+                            <Row key={index} style={{ alignItems: "center", justifyContent: "center" }}>
                                 <Col className="mb-3" sm={1} style={{ textAlign: "center" }}> <b>滿</b> </Col>
                                 <Col className="mb-3" sm={4}>
                                     <Select
@@ -179,7 +179,7 @@ const AddRecordPage = () => {
                     })
                 }
                 <hr/>
-                <Row className="mb-3">
+                <Row className="mb-3" style={{ justifyContent: "center" }}>
                     <Col className="mb-3" sm={4}>
                         <input
                             className="form-control"
@@ -218,7 +218,7 @@ const AddRecordPage = () => {
                         > 역만 </Button>
                     </Col>
                 </Row>
-                <Row className="mb-3">
+                <Row className="mb-3" style={{ justifyContent: "center" }}>
                     <Col style={{ textAlign: "right" }}>
                         <Button 
                             style={{ width: "50%", boxShadow: "1px 1px 3px gray" }}
