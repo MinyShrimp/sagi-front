@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Form, Button, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { NowPageAction } from "../Store/nowpage";

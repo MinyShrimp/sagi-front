@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
-import ForumCard from "../Component/ForumCard";
 import { useDispatch } from "react-redux";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
+import ForumCard from "../Component/ForumCard";
 import { NowPageAction } from "../Store/nowpage";
 
 const ForumPage = () => {
@@ -36,24 +39,32 @@ const ForumPage = () => {
     }, []);
 
     return (
-        <div className="container pt-3 pb-3">
-            <h1> 자랑하기 </h1>
-            <Row className="card_rows">
-                <Col className="mb-3"> <ForumCard /> </Col>
-                <Col className="mb-3"> <ForumCard /> </Col>
-                <Col className="mb-3"> <ForumCard /> </Col>
-            </Row>
-            <Row className="card_rows">
-                <Col className="mb-3"> <ForumCard /> </Col>
-                <Col className="mb-3"> <ForumCard /> </Col>
-                <Col className="mb-3"> <ForumCard /> </Col>
-            </Row>
-            <Row className="card_rows">
-                <Col className="mb-3"> <ForumCard /> </Col>
-                <Col className="mb-3"> <ForumCard /> </Col>
-                <Col className="mb-3"> <ForumCard /> </Col>
-            </Row>
-        </div>
+        <>
+            <div className="container pt-3 pb-3">
+                <h1> 자랑하기 </h1>
+                <Row className="card_rows">
+                    <Col className="mb-3"> <ForumCard /> </Col>
+                    <Col className="mb-3"> <ForumCard /> </Col>
+                    <Col className="mb-3"> <ForumCard /> </Col>
+                </Row>
+                <Row className="card_rows">
+                    <Col className="mb-3"> <ForumCard /> </Col>
+                    <Col className="mb-3"> <ForumCard /> </Col>
+                    <Col className="mb-3"> <ForumCard /> </Col>
+                </Row>
+                <Row className="card_rows">
+                    <Col className="mb-3"> <ForumCard /> </Col>
+                    <Col className="mb-3"> <ForumCard /> </Col>
+                    <Col className="mb-3"> <ForumCard /> </Col>
+                </Row>
+            </div>
+            <Link to="/addforum">
+                <Button
+                    variant="success" 
+                    className="add_btn"
+                > + </Button>
+            </Link>
+        </>
     );
 };
 

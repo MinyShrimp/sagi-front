@@ -7,7 +7,8 @@ const pages = {
     3: "contact",
     4: "login",
     5: "signup",
-    6: "addrecord"
+    6: "addrecord",
+    7: "addforum",
 } as const;
 export type PAGES = typeof pages[ keyof typeof pages ];
 
