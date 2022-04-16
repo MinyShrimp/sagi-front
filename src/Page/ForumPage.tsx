@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -9,6 +9,7 @@ import { NowPageAction } from "../Store/nowpage";
 
 const ForumPage = () => {
     const dispatch = useDispatch();
+    
 
     const handleResize = () => {
         var cards = document.getElementsByClassName('card_rows');
