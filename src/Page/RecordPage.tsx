@@ -1,9 +1,16 @@
 import React, { useEffect } from "react";
 import RecordItem from "../Component/RecordItem";
+import { useDispatch } from "react-redux";
+import { NowPageAction } from "../Store/nowpage";
 
 const RecordPage = () => {
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        console.log("record page")
+        const action: NowPageAction = {
+            type: "nowpage/set",
+            value: "record"
+        }; dispatch( action );
     }, []);
 
     return (

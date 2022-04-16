@@ -8,7 +8,8 @@ interface ModalAction {
 
 const nullModals = {
     loginModal: false,
-    addRecordModal: false
+    addRecordModal: false,
+    addForumModal: false
 };
 
 function modal_reducer( state = nullModals, action: ModalAction ) {
@@ -26,6 +27,13 @@ function modal_reducer( state = nullModals, action: ModalAction ) {
             return _state;
         case 'addrecord/hide':
             _state.addRecordModal = false;
+            return _state;
+        
+        case 'addforum/show':
+            _state.addForumModal = true;
+            return _state;
+        case 'addforum/hide':
+            _state.addForumModal = false;
             return _state;
 
         default:

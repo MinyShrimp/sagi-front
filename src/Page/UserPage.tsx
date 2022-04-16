@@ -1,8 +1,15 @@
 import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { NowPageAction } from "../Store/nowpage";
 
 const UserPage = () => {
+    const dispatch = useDispatch();
+    
     useEffect(() => {
-        console.log("user page");
+        const action: NowPageAction = {
+            type: "nowpage/set",
+            value: "user"
+        }; dispatch( action );
     }, []);
 
     return (

@@ -11,7 +11,7 @@ const AddRecord = () => {
         <BaseModal
             show = { addrecord_show }
             onHide = { () => { dispatch({ type: "addrecord/hide" }); } }
-            contents = { "hi" }
+            contents = { "add record" }
         />
     );
 }

@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Form, Button, Row } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { NowPageAction } from "../Store/nowpage";
 
 const ContactPage = () => {
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        console.log("contact page")
+        const action: NowPageAction = {
+            type: "nowpage/set",
+            value: "contact"
+        }; dispatch( action );
     }, [])
 
-    const [email,    setEmail] = useState("");
-    const [title,    setTitle] = useState("");
+    const [email,    setEmail]    = useState("");
+    const [title,    setTitle]    = useState("");
     const [contents, setContents] = useState("");
 
     const submit = () => {
