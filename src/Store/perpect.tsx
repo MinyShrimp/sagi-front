@@ -10,7 +10,7 @@ function perpects_reducer( state: Array<Perpect> = [], action: PerpectsAction ) 
             return [];
     }
 
-    const idx = _state.findIndex((value) => value.id == action.index);
+    const idx = _state.findIndex((value) => value.id === action.index);
     if( idx === -1 ) { return state; }
 
     switch( action.type ) {

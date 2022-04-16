@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -28,6 +28,8 @@ const AddRecordPage = () => {
     const [p_index, setPIndex]  = useState<number>(0);
     const [options, setOptions] = useState<Array<create_option>>([]);
 
+    var [switchName, setSwitchName] = useState( false );
+
     useEffect(() => {
         const action: NowPageAction = {
             type: "nowpage/set",
@@ -54,11 +56,11 @@ const AddRecordPage = () => {
         setOptions(_tmp);
     }
 
-    const getNames = () => {
+    const getNames = useMemo(() => {
         return record.infos.map((value) => { 
             return { value: value.name, label: value.name }; 
         });
-    }
+    }, [switchName]);
     
     return (
         <div className="container" style={{ display: "flex", justifyContent: "center", overflow: "hidden" }}>
@@ -74,10 +76,10 @@ const AddRecordPage = () => {
                                     options={options}
                                     placeholder="이름"
                                     onChange={(e: any) => {
+                                        setSwitchName( !switchName );
+
                                         const _value = { label: e.label, value: e.value };
-                                        if( e.__isNew__ ) {
-                                            addOption( _value );
-                                        }
+                                        if( e.__isNew__ ) { addOption( _value ); }
                                         var _tmp = {...DummyRecord}; _tmp.infos[index].name = _value.value;
                                         dispatch({ type: "record/setName", index: index, record: _tmp });
                                     }}
@@ -145,7 +147,7 @@ const AddRecordPage = () => {
                                 <Col className="mb-3" sm={4}>
                                     <Select
                                         placeholder="이름"
-                                        options={getNames()}
+                                        options={getNames}
                                         onChange={(e: any) => {
                                             const _tmp = {...DummyPerpect}; _tmp.name = e.value;
                                             dispatch({ type: "perpect/setName", index: value.id, perpect: _tmp });
