@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Form, Button, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { NowPageAction } from "../Store/nowpage";
+import goServer from "../Server/goServer";
 
 const SignupPage = () => {
     const dispatch = useDispatch();
@@ -18,10 +19,18 @@ const SignupPage = () => {
         }; dispatch( action );
     }, [])
 
-    const submit = () => {
-        console.log(
-            idRef.current, emailRef.current, 
-            nameRef.current, pwdRef.current);
+    const submit = async () => {
+        const serializer = {
+            'id'   : idRef.current,
+            'email': emailRef.current,
+            'name' : nameRef.current,
+            'pwd'  : nameRef.current
+        }
+        
+        const data = await goServer('signup/', 'POST', serializer);
+        if( data !== undefined ) {
+            console.log(data);
+        }
     }
 
     return (

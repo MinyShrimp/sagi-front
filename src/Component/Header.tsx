@@ -12,11 +12,11 @@ const Header = () => {
                 </div>
                 <div className="nav-item">
                     <Link to="/signup" style={{ marginRight: "15px" }}>
-                        <img src={SinupImg} style={{ height: "42px", cursor: "pointer" }} />
+                        <img src={SinupImg} style={{ height: "42px", cursor: "pointer" }} alt="signup" />
                     </Link>
 
                     <Link to="/login">
-                        <img src={LoginImg} style={{ height: "42px", cursor: "pointer" }} />
+                        <img src={LoginImg} style={{ height: "42px", cursor: "pointer" }} alt="login" />
                     </Link>
                 </div>
             </div>
